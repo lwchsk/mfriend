@@ -3,7 +3,6 @@
       title="标题"
       left-text="返回"
       right-text="按钮"
-      left-arrow
       @click-left="onClickLeft"
       @click-right="onClickRight"
   >
@@ -16,10 +15,10 @@
     <router-view/>
   </div>
 
-  <van-tabbar route>
-    <van-tabbar-item replace to="/" icon="home-o">主页</van-tabbar-item>
-    <van-tabbar-item replace to="/team" icon="search">队伍</van-tabbar-item>
-    <van-tabbar-item replace to="/user" icon="user">个人</van-tabbar-item>
+  <van-tabbar >
+    <van-tabbar-item  to="/" icon="home-o">主页</van-tabbar-item>
+    <van-tabbar-item  to="/team" icon="search">队伍</van-tabbar-item>
+    <van-tabbar-item  to="/user" icon="user">个人</van-tabbar-item>
   </van-tabbar>
 
 </template>
@@ -31,7 +30,7 @@ import {useRouter} from "vue-router";
 const router = useRouter();
 
 const onClickLeft = () => {
-  router.push('/')
+  router.back();
 };
 
 const onClickRight = () => {
